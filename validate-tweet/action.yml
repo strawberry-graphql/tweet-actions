@@ -12,8 +12,9 @@ runs:
     - run: npm install --no-save twitter-text
       shell: bash
     - uses: actions/github-script@v4
+      env:
+        TWEET: ${{ inputs.tweet }}
       with:
-        tweet: ${{ inputs.tweet }}
         script: |
           const script = require('${{ github.action_path }}/main.js')
           await script({github, context, core})
