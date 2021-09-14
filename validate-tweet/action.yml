@@ -9,7 +9,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: npm install twitter-text
+    - run: npm install -g twitter-text
       shell: bash
     - uses: actions/github-script@v4
       with:
