@@ -1,6 +1,4 @@
-const twitter = require("twitter-text");
-
-module.exports = ({ core }) => {
+module.exports = ({ core, twitter }) => {
   const tweetEncoded = process.env.TWEET;
 
   const buff = Buffer.from(tweetEncoded, "base64");

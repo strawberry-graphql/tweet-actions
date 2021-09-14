@@ -16,5 +16,6 @@ runs:
         TWEET: ${{ inputs.tweet }}
       with:
         script: |
-          const script = require('${{ github.action_path }}/main.js')
-          await script({github, context, core})
+          const twitter = require("twitter-text");
+          const script = require('${{ github.action_path }}/main.js');
+          await script({github, context, core, twitter});
