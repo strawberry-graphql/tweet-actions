@@ -1,7 +1,16 @@
 name: "Validate tweet action"
+description: "Validate a tweet using twitter's validation library"
+
 inputs:
   tweet:
+    description: "The tweet to validate"
     required: true
+
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "composite"
+  steps:
+    - uses: actions/github-script@v4
+      with:
+        script: |
+          const script = require('${{ github.action_path }}/main.js')
+          await script({github, context, core})
