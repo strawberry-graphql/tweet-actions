@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Validate tweet test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./validate-tweet
+        with:
+          tweet: this is a valid tweet :)
