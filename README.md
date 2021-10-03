@@ -20,6 +20,7 @@ we are happy to accept pull requests to make this more generic.
 - `changelog`: The changelog for the release (in base64)
 - `version`: The version of the release
 - `contributor`: The name of the contributor of this release
+- `contributor-twitter-username`: The Twitter username of the contributor (optional)
 
 ### Outputs
 
@@ -110,4 +111,5 @@ on:
           changelog: "dGhpcyBpcyBhbiBleGFtcGxlIGNoYW5nZWxvZw=="
           version: "(next)"
           contributor_name: "Patrick"
+          contributor_twitter_username: "@patrick91"
 ```

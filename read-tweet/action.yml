@@ -4,6 +4,8 @@ inputs:
     required: false
   contributor_name:
     required: true
+  contributor_twitter_username:
+    required: false
   changelog:
     required: true
 runs:

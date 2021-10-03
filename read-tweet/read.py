@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 changelog = os.environ["INPUT_CHANGELOG"]
 version = os.environ.get("INPUT_VERSION", "(next)")
 contributor = os.environ["INPUT_CONTRIBUTOR_NAME"]
+contributor_twitter_username = os.environ.get("INPUT_CONTRIBUTOR_TWITTER_USERNAME")
 release_url = f"https://github.com/strawberry-graphql/strawberry/releases/tag/{version}"
 
 card_text = ""
@@ -36,8 +37,11 @@ else:
     card_text = base64.b64encode(card_text.encode("utf-8")).decode("ascii")
 
 tweet_template = Template(tweet)
+name = (
+    f"@{contributor_twitter_username}" if contributor_twitter_username else contributor
+)
 tweet = tweet_template.substitute(
-    contributor=contributor, version=version, release_url=release_url
+    contributor=name, version=version, release_url=release_url
 )
 
 
