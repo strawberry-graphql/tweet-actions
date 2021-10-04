@@ -111,5 +111,5 @@ on:
           changelog: "dGhpcyBpcyBhbiBleGFtcGxlIGNoYW5nZWxvZw=="
           version: "(next)"
           contributor_name: "Patrick"
-          contributor_twitter_username: "@patrick91"
+          contributor_twitter_username: "patrick91"
 ```
