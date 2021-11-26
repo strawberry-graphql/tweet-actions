@@ -9,8 +9,12 @@ from bs4 import BeautifulSoup
 
 changelog = os.environ["INPUT_CHANGELOG"]
 version = os.environ.get("INPUT_VERSION", "(next)")
-contributor = os.environ["INPUT_CONTRIBUTOR_NAME"]
+contributor_name = os.environ["INPUT_CONTRIBUTOR_NAME"]
+contributor_twitter = os.environ.get("INPUT_CONTRIBUTOR_TWITTER_USERNAME", "").strip()
 release_url = f"https://github.com/strawberry-graphql/strawberry/releases/tag/{version}"
+
+if contributor_twitter and contributor_twitter[0] != "@":
+    contributor_twitter = f"@{contributor_twitter}"
 
 card_text = ""
 tweet = """
@@ -37,7 +41,11 @@ else:
 
 tweet_template = Template(tweet)
 tweet = tweet_template.substitute(
-    contributor=contributor, version=version, release_url=release_url
+    contributor=contributor_twitter or contributor_name,
+    contributor_name=contributor_name,
+    contributor_twitter=contributor_twitter,
+    version=version,
+    release_url=release_url,
 )
 
 
