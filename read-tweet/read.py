@@ -11,7 +11,7 @@ changelog = os.environ["INPUT_CHANGELOG"]
 version = os.environ.get("INPUT_VERSION", "(next)")
 contributor_name = os.environ["INPUT_CONTRIBUTOR_NAME"]
 contributor_twitter = os.environ.get("INPUT_CONTRIBUTOR_TWITTER_USERNAME", "").strip()
-release_url = f"https://beta.strawberry.rocks/release/{version}"
+release_url = f"https://strawberry.rocks/release/{version}"
 
 if contributor_twitter and contributor_twitter[0] != "@":
     contributor_twitter = f"@{contributor_twitter}"
