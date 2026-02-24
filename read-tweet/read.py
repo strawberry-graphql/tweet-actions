@@ -6,7 +6,6 @@ from string import Template
 import markdown
 from bs4 import BeautifulSoup
 
-
 changelog = os.environ["INPUT_CHANGELOG"]
 version = os.environ.get("INPUT_VERSION", "(next)")
 contributor_name = os.environ["INPUT_CONTRIBUTOR_NAME"]
